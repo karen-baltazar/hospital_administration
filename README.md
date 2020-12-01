@@ -5,7 +5,7 @@ y capturando los datos de éstos, dividiéndoles en tres categorías:
 Pacientes, Visitantes y Médicos.
 
 Éntiendase por paciente al individuo hospitalizado, 
-por visitante al individuo que visita al hospital por un motivo x 
+por visitante al individuo que visita al hospital por un motivo 'm' 
 y por médico al individuo que ejerce dicha profesión en el hospital.
 
 # Contexto
@@ -29,7 +29,7 @@ Para compilar el programa es necesario acceder a la consola e ingresar: "g++ mai
 Para ejecutar, se debe ingresar en la consola: "a.exe" o "./a.exe"
 
 # Correciones
-Para este programa se realizaron las siguientes correcioes:
+Para este programa se realizaron las siguientes correciones:
 1. Se arreglaron los Constructores por default y parametrizados de las clases Visitante, Paciente y Medico.
 
 2. Se agregó la clase Hospital, compuesta de arreglos de visistantes, pacientes y médicos con atributos y métodos
