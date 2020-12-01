@@ -96,6 +96,7 @@ string Paciente::printPaciente(){
 	stringstream p;
 	p << printNombre() << "Razón: " << razon << "\n";
 	p << "Notas: " << notas << "\nIncidaciones: "  << indicaciones << "\n";
+	p << expediente.printExpediente();
 	return p.str();
 }
 

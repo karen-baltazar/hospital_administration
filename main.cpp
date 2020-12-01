@@ -46,6 +46,7 @@ int main(){
 	
 	Hospital hospital;
 	int opcion = 0;
+	char c;
 	
 	// Variables de Individuo
 	string t_n, t_m, t_p;
@@ -126,12 +127,24 @@ int main(){
 			cin >> t_dir;
 			cout << "Introduce celular en caso de emergencias: ";
 			cin >> t_celular;
-			// cout << "¿El paciente cuenta con seguro Médico? [Y/N] ";
-			t_seg = true;
-			// cout << "¿El paciente acepta el Consetimiento de Tratamiento? [Y/N] ";
-			t_cons = true;
-			// cout << "¿El paciente acepta el Compromiso de Pago? [Y/N] ";
-			t_comp = true;
+			cout << "¿El paciente cuenta con seguro Médico? [Y/N] ";
+			cin >> c;
+			if(c == 'Y' || c == 'y')
+				t_seg = true;
+			else
+				t_seg = false;
+			cout << "¿El paciente acepta el Consetimiento de Tratamiento? [Y/N] ";
+			cin >> c;
+			if(c == 'Y' || c == 'y')
+				t_cons = true;
+			else
+				t_cons = false;
+			cout << "¿El paciente acepta el Compromiso de Pago? [Y/N] ";
+			cin >> c;
+			if(c == 'Y' || c == 'y')
+				t_comp = true;
+			else
+				t_comp = false;
 			hospital.agregaPaciente(t_n, t_p, t_m, t_r, t_note, t_ind, t_dir, t_celular, t_seg, t_cons, t_comp);			
 		}
 		

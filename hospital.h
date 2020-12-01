@@ -73,17 +73,17 @@ void Hospital::agregaMedico(string n, string p, string m, string t, string e, in
 
 void Hospital::muestraVisitantes(){
 	for (int i = 0; i < iv; i++)
-		cout << visitantes[i].printVisitante();		
+		cout << visitantes[i].printVisitante() << "\n";		
 }
 
 void Hospital::muestraPacientes(){
 	for (int i = 0; i < ip; i++)
-		cout << pacientes[i].printPaciente();		
+		cout << pacientes[i].printPaciente() << "\n";			
 }
 
 void Hospital::muestraMedicos(){
 	for (int i = 0; i < im; i++)
-		cout << medicos[i].printMedico();	
+		cout << medicos[i].printMedico() << "\n";		
 }
 
 #endif // HOSPITAL_H
