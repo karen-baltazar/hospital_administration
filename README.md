@@ -27,3 +27,15 @@ Finalmente, consta de un menú con las opciones iniciales y corre sobre consola.
 Para compilar el programa es necesario acceder a la consola e ingresar: "g++ main.cpp"
 
 Para ejecutar, se debe ingresar en la consola: "a.exe" o "./a.exe"
+
+# Correciones
+Para este programa se realizaron las siguientes correcioes:
+1. Se arreglaron los Constructores por default y parametrizados de las clases Visitante, Paciente y Medico.
+
+2. Se agregó la clase Hospital, compuesta de arreglos de visistantes, pacientes y médicos con atributos y métodos
+propios.
+
+3. Se redefinieron los atributos de las clases Visitante, Paciente y Medico, eliminando algunos atributos o bien
+cambiando la naturaleza de tipo de dato.
+
+3. Se hicieron correciones al Diagrama de Clases del proyecto para integrar la clase Hospital y los correciones anteriores.
