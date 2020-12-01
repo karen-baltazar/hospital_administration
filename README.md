@@ -9,6 +9,7 @@ y por médico al individuo que ejerce dicha profesión en el hospital.
 
 # Contexto
 En un hospital, ingresan todo tipo de individuos por diversas razones. 
-Dada la cantidad y diversidad de estos individuos, 
-se necesita de una estructura para facilitar la administración de la información de
-estas personas que ingresan al hospital.
+Dada la cantidad y diversidad de estos individuos se necesita de una estructura 
+que facilite la administración de la información de estas personas que ingresan 
+al hospital sobre una base diaria. De ahí que, se ha desarrollado este proyecto
+para ayudar en dicha tarea.
