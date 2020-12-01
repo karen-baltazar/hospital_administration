@@ -19,6 +19,6 @@ para ayudar en dicha tarea.
 El programa permite dar de alta nuevos individuos da cualquier clase, sea visistante,
 paciente o médico. Asimismo, permite ver una lista de todos los individuos por clase junto
 con su información respectiva. De la misma forma, permite actualizar esta
-información ingresando el nombre del individuo a modificar [En construcción].
+información ingresando el nombre del individuo a modificar/actualizar [En construcción].
 
 Finalmente, consta de un menú con las opciones iniciales y corre sobre consola.
