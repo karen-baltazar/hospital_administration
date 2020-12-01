@@ -38,3 +38,7 @@ propios.
 3. Se redefinieron los atributos de las clases Visitante, Paciente y Medico.
 
 3. Se hicieron correciones al Diagrama de Clases del proyecto para integrar dichas correciones.
+
+4. En main.cpp se agregó el menú y el bucle correspondiente para que el usuario pueda acceder a las opciones de dicho menú.
+
+
