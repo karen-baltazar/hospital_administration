@@ -22,3 +22,8 @@ con su información respectiva. De la misma forma, permite actualizar esta
 información ingresando el nombre del individuo a modificar/actualizar [En construcción].
 
 Finalmente, consta de un menú con las opciones iniciales y corre sobre consola.
+
+# Consideraciones
+Para compilar el programa es necesario acceder a la consola e ingresar: "g++ main.cpp"
+
+Para ejecutar, se debe ingresar en la consola: "a.exe" o "./a.exe"
