@@ -9,6 +9,6 @@ y por médico al individuo que ejerce dicha profesión en el hospital.
 
 # Contexto
 En un hospital, ingresan todo tipo de individuos por diversas razones. 
-Dada su diversidad y la gran información que se obtiene de cada uno, 
-se necesita de una estructura para administrar los datos de éstos y 
-facilitar el control sobre las personas que ingresan al hospital.
+Dada la cantidad y diversidad de estos individuos, 
+se necesita de una estructura para facilitar la administración de la información de
+estas personas que ingresan al hospital.
