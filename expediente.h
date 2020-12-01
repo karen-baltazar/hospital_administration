@@ -12,14 +12,14 @@ using namespace std;
  * Título: expediente.h
  * Nombre: Ana Karen López Baltazar
  * Matrícula: A01707750
- * 27/11/2020
+ * 1/12/2020
 */
 
 /* 
  * Descripción:
  * Clase Expediente que es componente de la clase
- * hija Paciente. Caputa atributos y datos
- * apegados a un Expediente Médico.
+ * Paciente. Captura atributos y datos
+ * contenidos en un Expediente Médico.
 */
 
 // Declaración de Clase: Expediente
@@ -29,15 +29,13 @@ class Expediente{
 		// Identificación
 		string direccion;
 		int celular_familiar;
-		bool seguro;
-		bool consetimiento;
-		bool compromiso;
+		bool seguro, consetimiento, compromiso;
 		
 	// Declaración de métodos (comportamientos)
 	public:
 		//Constructores
 		Expediente();
-		// Expediente(string d, int c, bool s, bool cn, bool cm);
+		Expediente(string d, int c, bool s, bool cn, bool cm);
 		
 		// Setters()
 		void setDireccion(string);
@@ -59,13 +57,13 @@ Expediente::Expediente(){
 }
 
 // Constructor parametrizado
-// Expediente::Expediente(string d, int c, bool s, bool cn, bool cm){
-	// direccion = d;
-	// celular_familiar = c;
-	// seguro = s;
-	// consetimiento = cn;
-	// compromiso = cm;
-// }
+Expediente::Expediente(string d, int c, bool s, bool cn, bool cm){
+	direccion = d;
+	celular_familiar = c;
+	seguro = s;
+	consetimiento = cn;
+	compromiso = cm;
+}
 
 // Setters()
 void Expediente::setDireccion(string dir){
@@ -90,7 +88,7 @@ void Expediente::setCompromiso(bool comp){
 
 string Expediente::printExpediente(){
 	stringstream expd;
-	expd << "Expediente Médico. \nDirección: " << direccion << "\nCelular: " << celular_familiar;
+	expd << "Expediente Médico. \nDirección: " << direccion << "\nCelular (en caso de emergencias): " << celular_familiar;
 	if (seguro == true)
 		expd << "\nSeguro de Gastos Médicos: Sí";
 	else

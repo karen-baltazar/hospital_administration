@@ -1,3 +1,6 @@
+#ifndef VISITANTE_H
+#define VISITANTE_H
+
 // Biblioteca
 #include <iostream>
 #include "individuo.h"
@@ -10,7 +13,7 @@ using namespace std;
  * Título: visitante.h
  * Nombre: Ana Karen López Baltazar
  * Matrícula: A01707750
- * 27/11/2020
+ * 1/12/2020
 */
 
 /* 
@@ -25,26 +28,34 @@ class Visitante: public Individuo{
 	// Declaración de atributos (características)
 	private:
 		// Identificación
-		string nombre;
-		string a_paterno;
-		string a_materno;
 		string motivo;
-		int h_ingreso;
-		int m_ingreso;
-		int h_salida;
-		int m_salida;
-		int dia;
-		int mes;
-		int anio;
-		int gafete;
-		bool entrega;
+		int hi, mi, hs, ms, dia, mes, anio;		
 		
-		
-	// Declaración de métodos (comportamientos)
+	// Declaración de métodos (comportamentos)
 	public:
-		//Constructores
-		Visitante();
-		Visitante(string m, int hi, int mi, int hs, int ms, int d, int mm, int a, int g);
+		//Constructor por default
+		Visitante(): Individuo(){
+			motivo = " ";
+			hi = 0;
+			mi = 0;
+			hs = 0;
+			ms = 0;
+			dia = 0;
+			mes = 0;
+			anio = 0;
+		}
+		
+		// Constructor parametrizado
+		Visitante(string n, string p, string m, string mot, int ih, int im, int dd, int mm, int aa): Individuo(n, p, m){
+		motivo = mot;
+		hi = ih;
+		mi = im;
+		hs = 0;
+		ms = 0;
+		dia = dd;
+		mes = mm;
+		anio = aa;
+		}
 		
 		// Getters()	
 		string getMotivo();
@@ -55,9 +66,7 @@ class Visitante: public Individuo{
 		int getDia();
 		int getMes();
 		int getAnio();
-		int getGafete();
-		bool getEntrega();
-		
+			
 		// Setters()		
 		void setMotivo(string);
 		void setHingreso(int);
@@ -67,43 +76,9 @@ class Visitante: public Individuo{
 		void setDia(int);
 		void setMes(int);
 		void setAnio(int);
-		void setGafete(int);
 		
-		void entregaGafete(string);
-		string printVisitante1();
-		string printVisitante2();
+		string printVisitante();
 };
-
-// Constructor por default
-Visitante::Visitante(){
-	nombre = " ";
-	a_paterno = " ";
-	a_materno = " ";
-	motivo = " ";
-	h_ingreso = 0;
-	m_ingreso = 0;
-	h_salida = 0;
-	m_salida = 0;
-	dia = 0;
-	mes = 0;
-	anio = 0;
-	gafete = 0;
-	entrega = false;
-}
-
-// Constructor parametrizado
-// Visitante::Visitante(string m, int hi, int mi, int hs, int ms, int d, int mm, int a, int g){
-	// motivo = m;
-	// h_ingreso = hi;
-	// m_ingreso = mi;
-	// h_salida = hs;
-	// m_salida = ms;
-	// dia = d;
-	// mes = mm;
-	// anio = a;
-	// gafete = g;
-	// entrega = false;
-// }
 
 // Getters()
 string Visitante::getMotivo(){
@@ -111,19 +86,19 @@ string Visitante::getMotivo(){
 }
 
 int Visitante::getHingreso(){
-	return h_ingreso;
+	return hi;
 }
 
 int Visitante::getMingreso(){
-	return m_ingreso;
+	return mi;
 }
 
 int Visitante::getHsalida(){
-	return h_salida;
+	return hs;
 }
 
 int Visitante::getMsalida(){
-	return m_salida;
+	return ms;
 }
 
 int Visitante::getDia(){
@@ -138,33 +113,25 @@ int Visitante::getAnio(){
 	return anio;
 }
 
-int Visitante::getGafete(){
-	return gafete;
-}
-
-bool Visitante::getEntrega(){
-	return entrega;
-}
-
 // Setters()
 void Visitante::setMotivo(string mot){
 	motivo = mot;
 }
 
-void Visitante::setHingreso(int hing){
-	h_ingreso = hing;
+void Visitante::setHingreso(int h_ingreso){
+	hi = h_ingreso;
 }
 
-void Visitante::setMingreso(int ming){
-	m_ingreso = ming;
+void Visitante::setMingreso(int m_ingreso){
+	mi = m_ingreso;
 }
 
-void Visitante::setHsalida(int hsal){
-	h_salida = hsal;
+void Visitante::setHsalida(int h_salida){
+	hs = h_salida;
 }
 
-void Visitante::setMsalida(int msal){
-	m_salida = msal;
+void Visitante::setMsalida(int m_salida){
+	ms = m_salida;
 }
 
 void Visitante::setDia(int day){
@@ -179,26 +146,12 @@ void Visitante::setAnio(int year){
 	anio = year;
 }
 
-void Visitante::setGafete(int gaf){
-	gafete = gaf;
+string Visitante::printVisitante(){
+	stringstream v;
+	v << printNombre() << "Motivo: " << motivo << "\n";
+	v << "Ingreso: " << hi << ":" << mi << "\nSalida: " << hs << ":" << ms << "\n";
+	v << "Fecha: " << dia << "/" << mes << "/" << anio << "\n";
+	return v.str();
 }
 
-void Visitante::entregaGafete(string res){
-	if (res == "Sí")
-		entrega=true;
-}
-
-string Visitante::printVisitante1(){
-	stringstream vi1;
-	vi1 << "Ingreso: " << h_ingreso << ":" << m_ingreso << "\nSalida: " << h_salida << ":" << m_salida << "\n";
-	return vi1.str();
-}
-
-string Visitante::printVisitante2(){
-	stringstream vi2;
-	if (entrega== true)
-		vi2 << "Motivo: " << motivo << "\nFecha: " << dia << "/" << mes << "/" << anio << "\nGafete: " << gafete << "\nEntrega: Sí";
-	else
-		vi2 << "Motivo: " << motivo << "\nFecha: " << dia << "/" << mes << "/" << anio << "\nGafete: " << gafete << "\nEntrega: No";
-	return vi2.str();
-}
+#endif // VISITANTE_H

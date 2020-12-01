@@ -14,7 +14,7 @@ using namespace std;
  * Título: paciente.h
  * Nombre: Ana Karen López Baltazar
  * Matrícula: A01707750
- * 27/11/2020
+ * 1/12/2020
 */
 
 /* 
@@ -29,56 +29,42 @@ class Paciente: public Individuo{
 	// Declaración de atributos (características)
 	private:
 		// Identificación
-		string nombre;
-		string a_paterno;
-		string a_materno;
-		string razon;
-		string notas;
-		string indicaciones;
-		int id;
+		string razon, notas, indicaciones;
 		Expediente expediente;
 		
 	// Declaración de métodos (comportamientos)
 	public:
-		//Constructores
-		Paciente();
-		Paciente(string r, string n, string i, int ide);
+		//Constructor por default
+		Paciente():Individuo(){
+			nombre = " ";
+			a_paterno = " ";
+			a_materno = " ";
+			razon = " ";
+			notas = " ";
+			indicaciones = " ";
+			expediente = Expediente();			
+		}
+		
+		//Constructor parametrizado
+		Paciente(string n, string p, string m, string r, string nt, string i, string d, int c, bool s, bool cn, bool cm): Individuo(n, p, m){
+			razon = r;
+			notas = nt;
+			indicaciones = i;
+			expediente = Expediente(d, c, s, cn, cm);
+		}
 		
 		// Getters()	
 		string getRazon();
 		string getNotas();
 		string getIndicaciones();
-		int getID();
 
 		// Setters()		
 		void setRazon(string);
 		void setNotas(string);
 		void setIndicaciones(string);
-		void setID(int);
 		
-		// void crearExpediente(string d, int c, bool s, bool cn, bool cm);
 		string printPaciente();
 };
-
-// Constructor por default
-Paciente::Paciente(){
-	nombre = " ";
-	a_paterno = " ";
-	a_materno = " ";
-	razon = " ";
-	notas = " ";
-	indicaciones = " ";
-	id = 0;
-	expediente = Expediente();
-}
-
-// Constructor parametrizado
-// Paciente::Paciente(string r, string n, string i, int ide){
-	// razon = r;
-	// notas = n;
-	// indicaciones = i;
-	// int id = ide;
-// }
 
 // Getters()
 string Paciente::getRazon(){
@@ -91,10 +77,6 @@ string Paciente::getNotas(){
 
 string Paciente::getIndicaciones(){
 	return indicaciones;
-}
-
-int Paciente::getID(){
-	return id;
 }
 
 // Setters()
@@ -110,19 +92,11 @@ void Paciente::setIndicaciones(string ind){
 	indicaciones = ind;
 }
 
-void Paciente::setID(int ident){
-	id = ident;
-}
-
-// void Paciente::crearExpediente(string d, int c, bool s, bool cn, bool cm){
-	// expediente = Expediente(d, c, s, cn, cm);	
-// }
-
 string Paciente::printPaciente(){
-	stringstream vis;
-	vis << "Razón: " << razon << "\nNotas: " << notas << "\nIncidaciones: "  << indicaciones << "\nID: "  << id << "\n";
-	// vis << expediente.printExpediente();
-	return vis.str();
+	stringstream p;
+	p << printNombre() << "Razón: " << razon << "\n";
+	p << "Notas: " << notas << "\nIncidaciones: "  << indicaciones << "\n";
+	return p.str();
 }
 
 #endif // PACIENTE_H

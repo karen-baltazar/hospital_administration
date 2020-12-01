@@ -1,3 +1,7 @@
+#ifndef MEDICO_H
+#define MEDICO_H
+
+
 // Biblioteca
 #include <iostream>
 #include "individuo.h"
@@ -10,7 +14,7 @@ using namespace std;
  * Título: medico.h
  * Nombre: Ana Karen López Baltazar
  * Matrícula: A01707750
- * 27/11/2020
+ * 1/12/2020
 */
 
 /* 
@@ -25,26 +29,32 @@ class Medico: public Individuo{
 	// Declaración de atributos (características)
 	private:
 		// Identificación
-		string nombre;
-		string a_paterno;
-		string a_materno;
-		string titulo;
-		string especialidad;
-		string certificacion;
-		int horario_inicio;
-		int horario_fin;
-		int experiencia;		
+		string titulo, especialidad;
+		int h_inicio, h_fin, experiencia;		
 		
 	// Declaración de métodos (comportamientos)
 	public:
-		//Constructores
-		Medico();
-		Medico(string t, string e, string c, int i, int f, int ex);
+		//Constructor por default
+		Medico(): Individuo(){
+			titulo = " ";
+			especialidad = " ";
+			h_inicio = 0;
+			h_fin = 0;
+			experiencia = 0;		
+		}
+		
+		// Constructor parametrizado
+		Medico(string n, string p, string m, string t, string e, int i, int f, int ex): Individuo(n, p, m){
+			titulo = t;
+			especialidad = e;
+			h_inicio = i;
+			h_fin = f;
+			experiencia = ex;			
+		}
 		
 		// Getters()
 		string getTitulo();
 		string getEspecialidad();
-		string getCertificacion();
 		int getHorarioInicio();
 		int getHorarioFin();
 		int getExperiencia();
@@ -52,37 +62,12 @@ class Medico: public Individuo{
 		// Setters()
 		void setTitulo(string);
 		void setEspecialidad(string);
-		void setCertificacion(string);
 		void setHorarioInicio(int);
 		void setHorarioFin(int);
 		void setExperiencia(int);
 		
-		string printMedico1();
-		string printMedico2();
+		string printMedico();
 };
-
-// Constructor por default
-Medico::Medico(){
-	nombre = " ";
-	a_paterno = " ";
-	a_materno = " ";
-	titulo = " ";
-	especialidad = " ";
-	certificacion = " ";
-	horario_inicio = 0;
-	horario_fin = 0;
-	experiencia = 0;
-}
-
-// Constructor parametrizado
-// Medico::Medico(string t, string e, string c, int i, int f, int ex){
-	// titulo = t;
-	// especialidad = e;
-	// certificacion = c;
-	// horario_inicio = i;
-	// horario_fin = f;
-	// experiencia = ex;
-// }
 
 // Getters()
 string Medico::getTitulo(){
@@ -93,16 +78,12 @@ string Medico::getEspecialidad(){
 	return especialidad;
 }
 
-string Medico::getCertificacion(){
-	return certificacion;
-}
-
 int Medico::getHorarioInicio(){
-	return horario_inicio;
+	return h_inicio;
 }
 
 int Medico::getHorarioFin(){
-	return horario_fin;
+	return h_fin;
 }
 
 int Medico::getExperiencia(){
@@ -118,30 +99,24 @@ void Medico::setEspecialidad(string esp){
 	especialidad = esp;
 }
 
-void Medico::setCertificacion(string certf){
-	certificacion = certf;
-}
-
 void Medico::setHorarioInicio(int hi){
-	horario_inicio = hi;
+	h_inicio = hi;
 }
 
 void Medico::setHorarioFin(int hf){
-	horario_fin = hf;
+	h_fin = hf;
 }
 
 void Medico::setExperiencia(int exp){
 	experiencia = exp;
 }
 
-string Medico::printMedico1(){
-	stringstream med1;
-	med1 << "Título: " << titulo << "\nEspecialidad: " << especialidad << "\nCertificación: " << certificacion << "\n";
-	return med1.str();
+string Medico::printMedico(){
+	stringstream m;
+	m << printNombre() << "Título: " << titulo << "\n";
+	m << "Especialidad: " << especialidad << "\n";
+	m << "Horario: " << h_inicio << ":00 - " << h_fin << ":00" << "\nExperiencia: " << experiencia << " años \n";
+	return m.str();
 }
 
-string Medico::printMedico2(){
-	stringstream med2;
-	med2 << "Horario: " << horario_inicio << ":00 - " << horario_fin << ":00" << "\nExperiencia: " << experiencia << "años \n";
-	return med2.str();
-}
+#endif // MEDICO_H

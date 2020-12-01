@@ -5,14 +5,13 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-
 using namespace std;
 
 /* 
  * Título: individuo.h
  * Nombre: Ana Karen López Baltazar
  * Matrícula: A01707750
- * 27/11/2020
+ * 1/12/2020
 */
 
 /* 
@@ -26,7 +25,7 @@ using namespace std;
 // Declaración de Clase: Individuo
 class Individuo{
 	// Declaración de atributos (características)
-	private:
+	protected:
 		// Identificación
 		string nombre;
 		string a_paterno;
@@ -36,7 +35,7 @@ class Individuo{
 	public:
 		//Constructores
 		Individuo();
-		Inidividuo(string n, string p, string m);
+		Individuo(string n, string p, string m);
 		
 		// Getters()
 		string getNombre();
@@ -59,11 +58,11 @@ Individuo::Individuo(){
 }
 
 // Constructor parametrizado
-// Individuo::Individuo(string n, string p, string m){
-	// nombre = n;
-	// a_paterno = p;
-	// a_materno = m;
-// }
+Individuo::Individuo(string n, string p, string m){
+	nombre = n;
+	a_paterno = p;
+	a_materno = m;
+}
 
 // Getters()
 string Individuo::getNombre(){
@@ -93,7 +92,7 @@ void Individuo::setMaterno(string materno){
 
 string Individuo::printNombre(){
 	stringstream nm;
-	nm << "Nombre: " << nombre << a_paterno << a_materno << "\n";
+	nm << "Nombre: " << nombre << " " << a_paterno << " " << a_materno << "\n";
 	return nm.str();
 }
 
