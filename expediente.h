@@ -12,7 +12,7 @@ using namespace std;
  * Título: expediente.h
  * Nombre: Ana Karen López Baltazar
  * Matrícula: A01707750
- * 1/12/2020
+ * 4/12/2020
 */
 
 /* 
@@ -26,16 +26,25 @@ using namespace std;
 class Expediente{
 	// Declaración de atributos (características)
 	private:
-		// Identificación
+		// Declaración de variables de instancia
 		string direccion;
 		int celular_familiar;
 		bool seguro, consetimiento, compromiso;
 		
 	// Declaración de métodos (comportamientos)
 	public:
-		//Constructores
+		//Constructor por default y parametrizado
 		Expediente();
 		Expediente(string d, int c, bool s, bool cn, bool cm);
+		
+		// Métodos miembros de la clase
+		
+		// Getters()
+		string getDireccion();
+		int getCelular();
+		bool getSeguro();
+		bool getConsentimiento();
+		bool getCompromiso();
 		
 		// Setters()
 		void setDireccion(string);
@@ -47,7 +56,11 @@ class Expediente{
 		string printExpediente();
 };
 
-// Constructor por default
+/* 
+ * Constructor por default
+ * @param 
+ * @return Objeto Expediente 
+*/
 Expediente::Expediente(){
 	direccion = " ";
 	celular_familiar = 0;
@@ -56,7 +69,15 @@ Expediente::Expediente(){
 	compromiso = false;
 }
 
-// Constructor parametrizado
+/* 
+ * Constructor parametrizado
+ * @param string d: dirección de paciente,
+ * int c: celular en caso de emergencias,
+ * bool s: seguro de gastos médicos,
+ * bool cn: consetimiento de tratamiento,
+ * bool cm: compromiso de pago
+ * @return Objeto Expediente 
+*/
 Expediente::Expediente(string d, int c, bool s, bool cn, bool cm){
 	direccion = d;
 	celular_familiar = c;
@@ -65,27 +86,105 @@ Expediente::Expediente(string d, int c, bool s, bool cn, bool cm){
 	compromiso = cm;
 }
 
+// Getters()
+
+/* 
+ * getter direccion
+ * @param 
+ * @return string: direccion del paciente
+*/
+string Expediente::getDireccion(){
+	return direccion;
+}
+
+/* 
+ * getter celular_familiar
+ * @param 
+ * @return int: celular en caso de emergencia
+*/
+int Expediente::getCelular(){
+	return celular_familiar;
+}
+
+/* 
+ * getter seg
+ * @param 
+ * @return bool: seguro de gastos médicos
+*/
+bool Expediente::getSeguro(){
+	return seg;
+}
+
+/* 
+ * getter consetimiento
+ * @param 
+ * @return bool: consetimiento de tratamiento
+*/
+bool Expediente::getConsentimiento(){
+	return consetimiento;
+}
+
+/* 
+ * getter compromiso
+ * @param 
+ * @return bool: compromiso de pago
+*/
+bool Expediente::getCompromiso(){
+	return compromiso;
+}
+
 // Setters()
+
+/* 
+ * setter direccion
+ * @param string: direccion del paciente
+ * @return
+*/
 void Expediente::setDireccion(string dir){
 	direccion = dir;
 }
 
+/* 
+ * setter celular_familiar
+ * @param string: celular en caso de emergencia
+ * @return
+*/
 void Expediente::setCelular(int cel){
 	celular_familiar = cel;
 }
 
+/* 
+ * setter seguro
+ * @param string: seguro de gastos de médicos
+ * @return
+*/
 void Expediente::setSeguro(bool seg){
 	seguro = seg;
 }
 
+/* 
+ * setter consetimiento
+ * @param string: consetimiento de tratamiento
+ * @return
+*/
 void Expediente::setConsentimiento(bool cons){
 	consetimiento = cons;
 }
 
+/* 
+ * setter compromiso
+ * @param string: compromiso de pago
+ * @return
+*/
 void Expediente::setCompromiso(bool comp){
 	compromiso = comp;
 }
 
+/* 
+ * Almacena valores de variables de instancia en cadena de texto
+ * @param 
+ * @return string: Datos de Expediente
+*/
 string Expediente::printExpediente(){
 	stringstream expd;
 	expd << "Expediente Médico. \nDirección: " << direccion << "\nCelular (en caso de emergencias): " << celular_familiar;

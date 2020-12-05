@@ -15,7 +15,7 @@ using namespace std;
  * Avance 4: Registro de Hospital
  * Nombre: Ana Karen López Baltazar
  * Matrícula: A01707750
- * 1/12/2020
+ * 4/12/2020
 */
 
 /* 
@@ -154,7 +154,7 @@ int main(){
 		}
 		
 		else if(opcion == 6){
-			cout <<"\nCreación de Médicos.";
+			cout <<"\nCreación de Médico.";
 			cout << "\nIntroduce apellido materno del medico: ";
 			cin >> t_m;
 			cout << "Introduce apellido paterno del medico: ";

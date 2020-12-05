@@ -11,7 +11,7 @@ using namespace std;
  * Título: individuo.h
  * Nombre: Ana Karen López Baltazar
  * Matrícula: A01707750
- * 1/12/2020
+ * 4/12/2020
 */
 
 /* 
@@ -26,38 +26,44 @@ using namespace std;
 class Individuo{
 	// Declaración de atributos (características)
 	protected:
-		// Identificación
+		// Declaración de variables de instancia
 		string nombre;
 		string a_paterno;
 		string a_materno;	
 		
 	// Declaración de métodos (comportamientos)
 	public:
-		//Constructores
+		//Constructor default y parametrizado
 		Individuo();
 		Individuo(string n, string p, string m);
+		
+		// Métodos miembros de la clase
 		
 		// Getters()
 		string getNombre();
 		string getPaterno();
 		string getMaterno();
 		
-		// Setters()
-		void setNombre(string);
-		void setPaterno(string);
-		void setMaterno(string);
-
 		string printNombre();
 };
 
-// Constructor por default
+/* 
+ * Constructor por default
+ * @param 
+ * @return Objeto Individuo 
+*/
 Individuo::Individuo(){
 	nombre = " ";
 	a_paterno = " ";
 	a_materno = " ";
 }
 
-// Constructor parametrizado
+/* 
+ * Constructor parametrizado
+ * @param string n: nombre del individuo, string p: apellido paterno, 
+ * string m: apelldio materno
+ * @return Objeto Individuo 
+*/
 Individuo::Individuo(string n, string p, string m){
 	nombre = n;
 	a_paterno = p;
@@ -65,31 +71,39 @@ Individuo::Individuo(string n, string p, string m){
 }
 
 // Getters()
+
+/* 
+ * getter nombre
+ * @param 
+ * @return string: nombre del individuo 
+*/
 string Individuo::getNombre(){
 	return nombre;
 }
 
+/* 
+ * getter a_paterno
+ * @param 
+ * @return string: apellido paterno 
+*/
 string Individuo::getPaterno(){
 	return a_paterno;
 }
 
+/* 
+ * getter a_materno
+ * @param 
+ * @return string: apellido materno
+*/
 string Individuo::getMaterno(){
 	return a_materno;
 }
 
-// Setters()
-void Individuo::setNombre(string nom){
-	nombre = nom;
-}
-
-void Individuo::setPaterno(string paterno){
-	a_paterno = paterno;	
-}
-
-void Individuo::setMaterno(string materno){
-	a_materno = materno;	
-}
-
+/* 
+ * Almacena valores de variables de instancia en cadena de texto
+ * @param 
+ * @return string: Datos del Individuo
+*/
 string Individuo::printNombre(){
 	stringstream nm;
 	nm << "Nombre: " << nombre << " " << a_paterno << " " << a_materno << "\n";

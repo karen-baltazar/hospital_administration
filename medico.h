@@ -14,7 +14,7 @@ using namespace std;
  * Título: medico.h
  * Nombre: Ana Karen López Baltazar
  * Matrícula: A01707750
- * 1/12/2020
+ * 4/12/2020
 */
 
 /* 
@@ -28,13 +28,17 @@ using namespace std;
 class Medico: public Individuo{
 	// Declaración de atributos (características)
 	private:
-		// Identificación
+		// Declaración de variables de instancia
 		string titulo, especialidad;
 		int h_inicio, h_fin, experiencia;		
 		
 	// Declaración de métodos (comportamientos)
 	public:
-		//Constructor por default
+		/* 
+		 * Constructor por default
+		 * @param 
+		 * @return Objeto Medico 
+		*/
 		Medico(): Individuo(){
 			titulo = " ";
 			especialidad = " ";
@@ -43,7 +47,14 @@ class Medico: public Individuo{
 			experiencia = 0;		
 		}
 		
-		// Constructor parametrizado
+		/* 
+		 * Constructor parametrizado
+		 * @param string n: nombre, string p: apellido paterno, 
+		 * string m: apelldio materno, string t: título del médico,
+		 * string e: especialidad, int i: hora inicio de horario, 
+		 * int f: hora fin de horario, int ex: años de experiencia
+		 * @return Objeto Medico 
+		*/
 		Medico(string n, string p, string m, string t, string e, int i, int f, int ex): Individuo(n, p, m){
 			titulo = t;
 			especialidad = e;
@@ -51,6 +62,8 @@ class Medico: public Individuo{
 			h_fin = f;
 			experiencia = ex;			
 		}
+		
+		// Métodos miembros de la clase
 		
 		// Getters()
 		string getTitulo();
@@ -70,47 +83,104 @@ class Medico: public Individuo{
 };
 
 // Getters()
+
+/* 
+ * getter titulo
+ * @param 
+ * @return string: título del médico 
+*/
 string Medico::getTitulo(){
 	return titulo;
 }
 
+/* 
+ * getter especialidad
+ * @param 
+ * @return string: especialidad del médico
+*/
 string Medico::getEspecialidad(){
 	return especialidad;
 }
 
+/* 
+ * getter h_inicio
+ * @param 
+ * @return int: hora inicio de horario del médico
+*/
 int Medico::getHorarioInicio(){
 	return h_inicio;
 }
 
+/* 
+ * getter h_fin
+ * @param 
+ * @return int: hora fin de horario del médico
+*/
 int Medico::getHorarioFin(){
 	return h_fin;
 }
 
+/* 
+ * getter experiencia
+ * @param 
+ * @return int: experiencia del médico 
+*/
 int Medico::getExperiencia(){
 	return experiencia;
 }
 
 // Setters()
+
+/* 
+ * setter titulo
+ * @param string: título de médico
+ * @return
+*/
 void Medico::setTitulo(string title){
 	titulo = title;
 }
 
+/* 
+ * setter especialidad
+ * @param string: especialidad de médico
+ * @return
+*/
 void Medico::setEspecialidad(string esp){
 	especialidad = esp;
 }
 
+/* 
+ * setter h_inicio
+ * @param string: hora inicio de horario del médico
+ * @return
+*/
 void Medico::setHorarioInicio(int hi){
 	h_inicio = hi;
 }
 
+/* 
+ * setter h_fin
+ * @param int: hora fin de horario del médico
+ * @return
+*/
 void Medico::setHorarioFin(int hf){
 	h_fin = hf;
 }
 
+/* 
+ * setter experiencia
+ * @param int: experiencia en años de médico
+ * @return
+*/
 void Medico::setExperiencia(int exp){
 	experiencia = exp;
 }
 
+/* 
+ * Almacena valores de variables de instancia en cadena de texto
+ * @param 
+ * @return string: Datos de Médico
+*/
 string Medico::printMedico(){
 	stringstream m;
 	m << printNombre() << "Título: " << titulo << "\n";
