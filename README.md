@@ -41,10 +41,7 @@ propios.
 
 4. En main.cpp se agregó el menú y el bucle correspondiente para que el usuario pueda acceder a las opciones de dicho menú.
 
-# En construcción
-A este programa es le deben hacer las siguientes correciones:
-1. Construir las opciones faltantes del main.cpp para la actualización de datos de los individuos.
+5. Asimismo, se agregó estilo en comentarios que cumpla con normas y estándares.
 
-2. Agregar estilo en comentarios que cumpla con normas y estándares.
-
-3. *Añadir validación de datos.
+No obstante, al programa todavía se le debe implementar validación de datos de entrada y construir las opciones faltantes del main.cpp 
+para la actualización de datos de los individuos.
