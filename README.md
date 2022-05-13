@@ -8,7 +8,7 @@ Pacientes, Visitantes y Médicos.
 por visitante al individuo que visita al hospital por un motivo 'm' 
 y por médico al individuo que ejerce dicha profesión en el hospital.
 
-(Nota: Proyecto realizado para Pensamiento Computacional Orientado A Objetos)
+**(Nota: Proyecto realizado para Pensamiento Computacional Orientado A Objetos)**
 
 # Contexto
 En un hospital, ingresan todo tipo de individuos por diversas razones. 
