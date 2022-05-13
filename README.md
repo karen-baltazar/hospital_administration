@@ -1,4 +1,4 @@
-# Proyecto-Karen-Baltazar (POO)
+# Proyecto-Karen-Baltazar
 Este programa fue desarrollado con la intención de llevar un registro
 de los individuos que ingresan a un hospital, administrando
 y capturando los datos de éstos, dividiéndoles en tres categorías:
