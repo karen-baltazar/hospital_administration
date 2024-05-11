@@ -1,49 +1,32 @@
-# Proyecto-Karen-Baltazar
-Este programa fue desarrollado con la intención de llevar un registro
-de los individuos que ingresan a un hospital, administrando
-y capturando los datos de éstos, dividiéndoles en tres categorías:
-Pacientes, Visitantes y Médicos.
+# Hospital-Administration
 
-Éntiendase por paciente al individuo hospitalizado, 
-por visitante al individuo que visita al hospital por un motivo 'm' 
-y por médico al individuo que ejerce dicha profesión en el hospital.
+## Objective
+This program was developed to keep track of individuals entering a hospital, managing and capturing their data, categorizing them into three categories: Patients, Visitors, and Doctors.
 
-**(Nota: Proyecto realizado para Pensamiento Computacional Orientado A Objetos)**
+A patient is understood as the individual hospitalized, a visitor as the individual who visits the hospital for a reason 'm', and a doctor as the individual who practices this profession in the hospital.
 
-# Contexto
-En un hospital, ingresan todo tipo de individuos por diversas razones. 
-Dada la cantidad y diversidad de estos individuos se necesita de una estructura 
-que facilite la administración de la información de estas personas que ingresan 
-al hospital sobre una base diaria. De ahí que, se ha desarrollado este proyecto
-para ayudar en dicha tarea.
+**(Note: The code and comments are in Spanish)**
 
-# Funcionalidad
-El programa permite dar de alta nuevos individuos da cualquier clase, sea visistante,
-paciente o médico. Asimismo, permite ver una lista de todos los individuos por clase junto
-con su información respectiva. De la misma forma, permite actualizar esta
-información ingresando el nombre del individuo a modificar/actualizar [En construcción].
+## Context
+Hospitals receive all kinds of individuals for various reasons. Given the quantity and diversity of these individuals, a structure is needed to facilitate the administration of the information of these people entering the hospital on a daily basis. Hence, this project has been developed to assist in this task.
 
-Finalmente, consta de un menú con las opciones iniciales y corre sobre consola.
+## Functionality
+The program allows adding new individuals of any class, whether visitor, patient, or doctor. Likewise, it allows viewing a list of all individuals by class along with their respective information. Similarly, it allows updating this information by entering the name of the individual to be modified/updated [Under construction].
 
-# Consideraciones
-Para compilar el programa es necesario acceder a la consola e ingresar: "g++ main.cpp"
+Finally, it consists of a menu with the initial options and runs on the console.
 
-Para ejecutar, se debe ingresar en la consola: "a.exe" o "./a.exe"
+## Considerations
+To compile the program, it is necessary to access the console and enter: "g++ main.cpp"
 
-# Correciones
-Para este programa se realizaron las siguientes correciones:
-1. Se arreglaron los Constructores por default y parametrizados de las clases Visitante, Paciente y Medico.
+To execute, enter in the console: "a.exe" or "./a.exe"
 
-2. Se agregó la clase Hospital, compuesta de arreglos de visistantes, pacientes y médicos con atributos y métodos
-propios.
+## Corrections
+For this program, the following corrections were made:
+1. Default and parameterized constructors of the Visitor, Patient, and Doctor classes were fixed.
+2. The Hospital class was added, composed of arrays of visitors, patients, and doctors with their own attributes and methods.
+3. Attributes of the Visitor, Patient, and Doctor classes were redefined.
+4. Corrections were made to the Class Diagram of the project to integrate these corrections.
+5. A menu and the corresponding loop were added to main.cpp so that the user can access the options of said menu.
+6. Additionally, style was added to comments to comply with norms and standards.
 
-3. Se redefinieron los atributos de las clases Visitante, Paciente y Medico.
-
-3. Se hicieron correciones al Diagrama de Clases del proyecto para integrar dichas correciones.
-
-4. En main.cpp se agregó el menú y el bucle correspondiente para que el usuario pueda acceder a las opciones de dicho menú.
-
-5. Asimismo, se agregó estilo en comentarios que cumpla con normas y estándares.
-
-No obstante, al programa todavía se le debe implementar validación de datos de entrada y construir las opciones faltantes del main.cpp 
-para la actualización de datos de los individuos.
+However, data input validation still needs to be implemented in the program and the missing options of main.cpp need to be built for updating individual data.
